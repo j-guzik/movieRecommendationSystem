@@ -1,0 +1,42 @@
+<div class="wrap">
+  <div class="background">
+    <div class="shape"><i class="fas fa-film"></i></div>
+    <div class="shape"><i class="fas fa-film"></i></div>
+    <div class="shape"><i class="fas fa-film"></i></div>
+  </div>
+  <form action="/action_page.php">
+    <div class="wrap-button d-flex">
+      <button class="form-button change-form-button">Zaloguj się</button>
+      <button
+        routerLink="/signup"
+        type="submit"
+        class="form-button change-form-button button-disable"
+        style="border-radius: 0 5px 0 0"
+      >
+        Zarejestruj się
+      </button>
+    </div>
+    <div><i class="far fa-user-circle"></i></div>
+    <label for="email">Email</label>
+    <input type="email" #email placeholder="email" id="email" />
+
+    <label for="pwd">Hasło</label>
+    <input type="password" #password placeholder="hasło" id="pwd" />
+
+    <button
+      routerLink="/dashboard"
+      type="submit"
+      class="form-button"
+      (click)="signin(email.value, password.value)"
+    >
+      Zaloguj
+    </button>
+    <!-- <button
+      routerLink="/signup"
+      type="submit"
+      class="form-button button-disable"
+    >
+      Zarejestruj
+    </button> -->
+  </form>
+</div>

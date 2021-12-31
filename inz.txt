@@ -1,0 +1,1 @@
+bierzemy 3 najlepiej ocenione w ostatnim czasie(?) powyzej 5, na kazfym wywolujemy funjcje get recomm i zapisujemy do listy(tablicy) recommendacje, randomowo losujemy 5 i wyswietlamy

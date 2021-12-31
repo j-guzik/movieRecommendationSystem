@@ -1,0 +1,35 @@
+<div class="wrap">
+  <div class="background">
+    <div class="shape"><i class="fas fa-film"></i></div>
+    <div class="shape"><i class="fas fa-film"></i></div>
+    <div class="shape"><i class="fas fa-film"></i></div>
+  </div>
+  <form action="/action_page.php">
+    <div class="wrap-button d-flex">
+      <button
+        routerLink="/"
+        type="submit"
+        class="form-button change-form-button button-disable"
+        style="border-radius: 5px 0 0 0"
+      >
+        Zaloguj się
+      </button>
+      <button class="form-button change-form-button">Zarejestruj się</button>
+    </div>
+    <div><i class="far fa-user-circle"></i> <i class="fas fa-plus"></i></div>
+
+    <label for="email">Email</label>
+    <input type="email" #email placeholder="email" id="email" />
+    <label for="pwd">Hasło</label>
+    <input type="password" #password placeholder="hasło" id="pwd" />
+    <div *ngIf="error">{{ error }}</div>
+    <button
+      routerLink="/dashboard"
+      type="submit"
+      class="form-button"
+      (click)="signup(email.value, password.value)"
+    >
+      Zarejestruj
+    </button>
+  </form>
+</div>

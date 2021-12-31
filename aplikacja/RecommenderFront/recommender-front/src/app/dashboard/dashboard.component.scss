@@ -1,0 +1,175 @@
+ngb-rating {
+  color: pink;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 300px;
+  min-width: 200px;
+  border-radius: 50px;
+  background-color: #001523;
+  overflow: hidden;
+}
+
+.card_image {
+  width: 100%;
+  height: auto;
+}
+
+.card_overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 50px;
+  background-color: rgb(192, 192, 211);
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover .card_overlay {
+  transform: translateY(0);
+}
+
+.card_header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: 50px;
+  transform: translateY(-100%);
+  background-color: #001523;
+  transition: 0.2s ease-in-out;
+  color: #6a515e;
+}
+
+.card:hover .card_header {
+  transform: translateY(0);
+}
+
+.card_title {
+  font-size: 1.4em;
+  margin: 0 0 0.3em;
+  color: white;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";
+  font-size: 0.8em;
+  color: #d7bdca;
+}
+
+.card__status {
+  font-size: 0.8em;
+  color: #d7bdca;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #d7bdca;
+  font-family: "MockFlowFont";
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #00111c;
+  filter: contrast(20);
+  z-index: 30000;
+  .l-bcg{
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+  }
+  .dot{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    filter: blur(4px);
+    background: white;
+    border-radius: 50%;
+    transform: translate(50%, 50%);
+    animation: dot 2.8s infinite;
+    color: white;
+  }
+  .dots{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+    // margin-top: 12px;
+    // margin-left: 31px;
+    animation: dots 2.8s infinite;
+    span{
+      display: block;
+      float: left;
+      width: 16px;
+      height: 16px;
+      margin-left: 16px;
+      filter: blur(4px);
+      background: white;
+      border-radius: 50%;
+    }
+  }
+
+}
+
+@keyframes dot{
+  50%{
+    transform: translateX(96px)
+  }
+}
+@keyframes dots{
+  50%{
+    transform: translateX(-31px)
+  }
+}
+
+@keyframes bg-animation {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-5%,-5%) }
+  20% { transform: translate(-10%,5%) }
+  30% { transform: translate(5%,-10%) }
+  40% { transform: translate(-5%,15%) }
+  50% { transform: translate(-10%,5%) }
+  60% { transform: translate(15%,0) }
+  70% { transform: translate(0,10%) }
+  80% { transform: translate(-15%,0) }
+  90% { transform: translate(10%,5%) }
+  100% { transform: translate(5%,0) }
+}
