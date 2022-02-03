@@ -22,7 +22,6 @@
     <input type="email" #email placeholder="email" id="email" />
     <label for="pwd">Hasło</label>
     <input type="password" #password placeholder="hasło" id="pwd" />
-    <div *ngIf="error">{{ error }}</div>
     <button
       routerLink="/dashboard"
       type="submit"
@@ -31,5 +30,6 @@
     >
       Zarejestruj
     </button>
+    <div id="error"></div>
   </form>
 </div>

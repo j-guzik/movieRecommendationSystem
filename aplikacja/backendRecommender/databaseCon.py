@@ -63,7 +63,7 @@ class Database:
 
     def getPopularMovies(self):
         data = []
-        self.cursor.execute("SELECT TOP 6 * from movies order by popularity desc;")
+        self.cursor.execute("SELECT TOP 8 * from movies order by popularity desc;")
         rows = self.cursor.fetchall()
         for row in rows:
             data.append(list(row))

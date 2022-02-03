@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     JwPaginationModule,
     MatPaginatorModule,
     IvyCarouselModule,
+    SlickCarouselModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

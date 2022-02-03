@@ -12,7 +12,17 @@ export class AuthService {
   public userID: string;
   configUrl = 'http://127.0.0.1:5000/newUser/';
   fetchedUser = [];
-  error;
+  firebaseErrors = {
+    'auth/user-not-found':
+      'Brak użytkownika odpowiadającego podanemu adresowi email.',
+    'auth/email-already-in-use':
+      'Podany adres e-mail jest już używany przez istniejącego użytkownika.',
+    'auth/invalid-email': 'Podany email jest nieprawidłowy.',
+    'auth/invalid-password': 'Podane hasło jest nieprawidłowe.',
+    'auth/wrong-password': 'Podane hasło jest nieprawidłowe.',
+    'auth/weak-password': 'Hasło musi zawierać 6 lub więcej znaków.',
+    'auth/network-request-failed': 'Wystąpił błąd sieci.',
+  };
 
   constructor(private firebaseAuth: AngularFireAuth, private http: HttpClient) {
     this.user = this.firebaseAuth.authState;
@@ -27,8 +37,8 @@ export class AuthService {
       })
       .catch((err) => {
         console.log('Error:', err.message);
-        this.error = err;
-        return this.error;
+        const message = document.getElementById('error');
+        message.textContent = this.firebaseErrors[err.code] || err.message;
       });
   }
 
@@ -41,6 +51,8 @@ export class AuthService {
       })
       .catch((err) => {
         console.log('Error:', err.message);
+        const message = document.getElementById('error');
+        message.textContent = this.firebaseErrors[err.code] || err.message;
       });
   }
 

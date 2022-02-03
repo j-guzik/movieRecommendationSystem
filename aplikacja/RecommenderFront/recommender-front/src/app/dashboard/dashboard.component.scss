@@ -1,5 +1,8 @@
-ngb-rating {
-  color: pink;
+ngb-rating,
+.fa-star {
+  background: -webkit-linear-gradient(left, #ff9529, #ff2424);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sr-only {
@@ -16,7 +19,6 @@ ngb-rating {
 .card {
   position: relative;
   display: block;
-  height: 300px;
   min-width: 200px;
   border-radius: 50px;
   background-color: #001523;
@@ -26,18 +28,6 @@ ngb-rating {
 .card_image {
   width: 100%;
   height: auto;
-}
-
-.card_overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  border-radius: 50px;
-  background-color: rgb(192, 192, 211);
-  transform: translateY(100%);
-  transition: 0.2s ease-in-out;
 }
 
 .card:hover .card_overlay {
@@ -91,8 +81,6 @@ ngb-rating {
   overflow: hidden;
 }
 
-
-
 .loader {
   position: fixed;
   width: 100vw;
@@ -100,7 +88,7 @@ ngb-rating {
   background: #00111c;
   filter: contrast(20);
   z-index: 30000;
-  .l-bcg{
+  .l-bcg {
     position: fixed;
     top: -50%;
     left: -50%;
@@ -108,13 +96,14 @@ ngb-rating {
     bottom: -50%;
     width: 200%;
     height: 200vh;
-    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background: transparent
+      url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
     background-repeat: repeat;
-    animation: bg-animation .2s infinite;
-    opacity: .9;
+    animation: bg-animation 0.2s infinite;
+    opacity: 0.9;
     visibility: visible;
   }
-  .dot{
+  .dot {
     position: absolute;
     width: 16px;
     height: 16px;
@@ -127,7 +116,7 @@ ngb-rating {
     animation: dot 2.8s infinite;
     color: white;
   }
-  .dots{
+  .dots {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -135,7 +124,7 @@ ngb-rating {
     // margin-top: 12px;
     // margin-left: 31px;
     animation: dots 2.8s infinite;
-    span{
+    span {
       display: block;
       float: left;
       width: 16px;
@@ -146,30 +135,234 @@ ngb-rating {
       border-radius: 50%;
     }
   }
-
 }
 
-@keyframes dot{
-  50%{
-    transform: translateX(96px)
+@keyframes dot {
+  50% {
+    transform: translateX(96px);
   }
 }
-@keyframes dots{
-  50%{
-    transform: translateX(-31px)
+@keyframes dots {
+  50% {
+    transform: translateX(-31px);
   }
 }
 
 @keyframes bg-animation {
-  0% { transform: translate(0,0) }
-  10% { transform: translate(-5%,-5%) }
-  20% { transform: translate(-10%,5%) }
-  30% { transform: translate(5%,-10%) }
-  40% { transform: translate(-5%,15%) }
-  50% { transform: translate(-10%,5%) }
-  60% { transform: translate(15%,0) }
-  70% { transform: translate(0,10%) }
-  80% { transform: translate(-15%,0) }
-  90% { transform: translate(10%,5%) }
-  100% { transform: translate(5%,0) }
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
+}
+
+// ok
+
+h2.subtitle {
+  text-align: center;
+  padding: 10px;
+  font-size: 26px;
+  margin: 0;
+}
+
+.main-carousel {
+  height: 90vh !important;
+  position: relative;
+  img {
+    object-fit: fill !important;
+  }
+  .carousel-body {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    width: 25%;
+    height: 100%;
+    padding: 0 25px;
+    background-color: #a5a7ab3b;
+    backdrop-filter: blur(10px);
+    h2 {
+      margin-top: 140px;
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+.carousel-cell .rating {
+  font-size: 20px;
+  align-items: start;
+  i {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  p {
+    margin-top: 2px;
+  }
+}
+
+.cards {
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  min-width: 200px;
+  max-height: 380px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  &:hover .card-overlay {
+    transform: translateY(0);
+  }
+  &:hover .card-header {
+    transform: translateY(-58px);
+  }
+}
+
+.card-header {
+  position: absolute;
+  bottom: 0;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 7px 1.1em;
+  transform: translateY(-75px);
+  transition: transform 0.2s ease-in-out;
+  border-bottom: none;
+  background-color: #c2c6cd63;
+  backdrop-filter: blur(10px);
+  .card-header-text {
+    flex-grow: 2;
+  }
+}
+
+.card-title {
+  font-size: 17px;
+  margin: 0 0 0.3em;
+  color: white;
+  word-break: break-word;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-body {
+  background-color: #c2c6cd63;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  padding: 1.1em;
+  height: 100%;
+}
+
+.card-button {
+  margin-top: -5px;
+  background-image: -webkit-linear-gradient(bottom, #d1adff, #79c8fb);
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  height: 40px;
+  width: 60px;
+  margin: 2px;
+  font-size: 13px;
+  align-self: center;
+}
+
+.modal {
+  z-index: 105500;
+  background-color: #c2c6cd63;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+}
+
+.modal .header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dee2e6;
+  padding: 1.5rem 2rem 0;
+}
+
+.modal-body {
+  padding: 1rem 2rem 2rem !important;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.popularMovies2 {
+  position: relative;
+  top: -15vh;
+  z-index: 700000000;
+}
+
+.section-container {
+  margin-bottom: 10px;
+}
+
+.line {
+  background: white;
+  width: 80px;
+  height: 1px;
+  margin: -7px auto auto auto;
+}
+
+.logout {
+  position: absolute;
+  z-index: 900000;
+  right: 32px;
+  top: 15px;
+  font-size: 45px;
+  .fa-sort-down {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: -15px;
+  }
 }

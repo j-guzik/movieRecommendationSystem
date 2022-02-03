@@ -27,12 +27,6 @@
   position: relative;
 }
 
-.carousel-title {
-  position: absolute;
-  top: 70px;
-  left: 15px;
-}
-
 // Form
 
 form {
@@ -74,6 +68,7 @@ form input {
   font-size: 14px;
   font-weight: 300;
   border: none;
+  color: #00111c;
   &:focus {
     outline: none;
     border-color: inherit;
@@ -83,7 +78,7 @@ form input {
 }
 
 .form-button {
-  margin-top: 50px;
+  margin-top: 45px;
   width: 100%;
   background-color: #ffffff;
   color: #00111c;
@@ -156,16 +151,16 @@ form input {
   bottom: -80px;
 }
 
-.fa-user-circle {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 20px);
-  font-size: 100px;
-}
-
 .fa-plus:before {
   position: relative;
   left: 111px;
   top: -31px;
   font-size: 25px;
+}
+
+#error {
+  position: absolute;
+  padding-top: 10px;
+  margin-right: 34px;
+  color: #ffabab;
 }

@@ -23,6 +23,8 @@ export class DashboardComponent implements OnInit {
   fetchedMovies = [];
   fetchedAllMovies = [];
   fetchedPopularMovies = [];
+  popularMovies1 = [];
+  popularMovies2 = [];
   pageOfItems: Array<any>;
   ratedValue = null;
   currentStars = 0;
@@ -92,6 +94,8 @@ export class DashboardComponent implements OnInit {
     this.http.get(this.popularUrl).subscribe(
       (response: any) => {
         this.fetchedPopularMovies = response;
+        this.popularMovies1 = this.fetchedPopularMovies.slice(0, 4);
+        this.popularMovies2 = this.fetchedPopularMovies.slice(4);
       },
       (error) => console.log(error)
     );
