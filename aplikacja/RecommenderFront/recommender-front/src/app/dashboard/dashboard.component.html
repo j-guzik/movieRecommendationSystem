@@ -10,7 +10,7 @@
 
 <div class="wrap">
   <div class="wrap-blur">
-    <div class="logout">
+    <div class="logout" id="logout">
       <i class="far fa-user-circle"></i><i class="fas fa-sort-down"></i>
     </div>
 
@@ -22,7 +22,7 @@
           <p>{{ movie[1] }}</p>
           <div class="d-flex rating">
             <i class="fas fa-star"></i>
-            <p>{{ movie[7] }}</p>
+            <p>{{ movie[7] | number: "1.0-2" }}</p>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
           </div>
         </div>
 
-        <div *ngIf="fetchedMovies" class="section-container">
+        <div *ngIf="fetchedMovies.length > 0" class="section-container">
           <h2 class="subtitle">Polecane dla Ciebie</h2>
           <div class="line"></div>
           <carousel [loop]="true" [cellsToShow]="4" [height]="400">
@@ -87,7 +87,7 @@
                     >
                       <i class="fas fa-star" style="margin-right: 4px"></i>
                       <p class="m-0" style="font-size: 17px">
-                        {{ movie[7] }}
+                        {{ movie[7] | number: "1.0-2" }}
                       </p>
                     </div>
                     <a
@@ -148,6 +148,7 @@
           <img
             src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
             alt="tmdb"
+            class="tmdb"
           />
         </div>
       </div>

@@ -164,3 +164,21 @@ form input {
   margin-right: 34px;
   color: #ffabab;
 }
+
+.pagination {
+  justify-content: center !important;
+}
+
+.page-item.active .page-link {
+  background-color: #5c6166;
+  border-color: white;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #5c6166;
+}
+
+.mat-typography {
+  padding-right: 0 !important;
+}

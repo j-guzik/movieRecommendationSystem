@@ -1,6 +1,4 @@
-import pandas as pd
 import pyodbc
-
 
 class Database:
 

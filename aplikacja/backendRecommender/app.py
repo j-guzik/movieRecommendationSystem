@@ -6,11 +6,6 @@ import Recommender
 
 app = Flask(__name__)
 
-#
-# @app.route("/predictions/<int:uid>", strict_slashes=False)
-# def predictions(uid):
-#     return json.dumps(getRecommendedItems(uid), indent=2)
-
 @app.route("/newUser/<string:uid>", strict_slashes=False)
 def newUser(uid):
     connection = databaseCon.Database()

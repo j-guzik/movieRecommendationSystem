@@ -3,6 +3,7 @@ import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +25,11 @@ export class AuthService {
     'auth/network-request-failed': 'Wystąpił błąd sieci.',
   };
 
-  constructor(private firebaseAuth: AngularFireAuth, private http: HttpClient) {
+  constructor(
+    private firebaseAuth: AngularFireAuth,
+    private http: HttpClient,
+    private router: Router
+  ) {
     this.user = this.firebaseAuth.authState;
   }
 
@@ -33,6 +38,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then((x) => {
         this.createInternalUser(x.user.uid);
+        this.router.navigate(['/dashboard']);
         console.log('Sign up!', x.user.uid);
       })
       .catch((err) => {
@@ -47,6 +53,7 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((x) => {
         this.userID = x.user.uid;
+        this.router.navigate(['/dashboard']);
         console.log('Sign in', x.user.uid);
       })
       .catch((err) => {
@@ -58,6 +65,7 @@ export class AuthService {
 
   signout() {
     this.firebaseAuth.auth.signOut();
+    this.router.navigate(['/home']);
   }
 
   createInternalUser(uid: string) {
