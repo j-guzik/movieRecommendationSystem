@@ -1,4 +1,5 @@
 # System rekomendacji filmów
+https://github.com/j-guzik/movieRecommendationSystem
 
 ## Spis treści
 * [Podstawowe informacje](#podstawowe-informacje)
@@ -9,6 +10,7 @@
 ## Podstawowe informacje
 Projekt przedstawia aplikację webową służącą do rekomendacji filmów. Rekomendacja odbywa się za pomocą tzw. content-based filtering i opiera się na porównywaniu podobieństwa między słowami kluczowymi, gatunkami, najlepszymi aktorami oraz reżyserze. 
 
+![](https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/Recommender.gif) 
 
 ## Technologie i architektura
 Projekt utworzono przy pomocy:
@@ -18,7 +20,7 @@ Projekt utworzono przy pomocy:
 * Python 3.10
 * MySQL 8.0
 
-<img height="400" alt="architecture" src="https://github.com/j-guzik/movieRecommendationSystem/blob/master/zdj%C4%99cia/architektura.PNG">
+<img height="400" alt="architecture" src="https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/architektura.PNG">
 
 ## Uruchomienie
 
@@ -26,7 +28,7 @@ Projekt utworzono przy pomocy:
 
 Należy utworzyć bazę o następującej strukturze:
 
-<img height="400" alt="architecture" src="https://github.com/j-guzik/movieRecommendationSystem/blob/master/zdj%C4%99cia/baza.PNG">
+<img height="400" alt="architecture" src="https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/baza.PNG">
 
 Następny krok to wczytanie do tabeli movies wartości z pliku:
 
@@ -36,7 +38,7 @@ https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/movies.cs
 * backend
 
 W pliku databaseCon.py należy połączyć się z lokalną bazą danych.
-Pakiety jakie należy zainstalować: pandas 1.3.4, pyodbc 4.0.32, flask 2.0.2.
+Pakiety do zainstalowania: pandas 1.3.4, pyodbc 4.0.32, flask 2.0.2.
 
 * frontend
 
