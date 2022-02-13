@@ -13,6 +13,8 @@ Projekt przedstawia aplikację webową służącą do rekomendacji filmów. Reko
 Rejestracja i logowanie:
 ![](https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/gifLogowanie.gif) 
 
+![](https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/gif.gif) 
+
 ## Technologie i architektura
 Projekt utworzono przy pomocy:
 * Angular CLI: 12.2.10
