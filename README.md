@@ -10,7 +10,8 @@ https://github.com/j-guzik/movieRecommendationSystem
 ## Podstawowe informacje
 Projekt przedstawia aplikację webową służącą do rekomendacji filmów. Rekomendacja odbywa się za pomocą tzw. content-based filtering i opiera się na porównywaniu podobieństwa między słowami kluczowymi, gatunkami, najlepszymi aktorami oraz reżyserami.
 
-![](https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/gif.gif) 
+Rejestracja i logowanie:
+![](https://github.com/j-guzik/movieRecommendationSystem/blob/master/media/gifLogowanie.gif) 
 
 ## Technologie i architektura
 Projekt utworzono przy pomocy:
